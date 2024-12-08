@@ -1,0 +1,114 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(15px + 0.390625vw);
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:
+    /*2em*/
+    auto
+    /*2em*/
+  ;
+}
+
+.header {
+  text-align: center;
+  align-content: center;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+  gap: 0.15em;
+  padding: 0.15em;
+  background-color: rgb(234, 255, 222);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  overflow: auto;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  #grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    overflow: hidden;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #grid {
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    font-size: 2.5em;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) {
+  #grid {
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 3em;
+  }
+}
+
+.cell {
+  background-color: lightgrey;
+  color: silver;
+  text-align: center;
+  align-content: center;
+  border: 0.05em solid rgb(6, 90, 6);
+  border-radius: 4%;
+}
+
+.cellOn {
+  background-color: rgb(6, 90, 6);
+  color: white;
+  opacity: 0;
+  animation: landing ease 1s forwards;
+}
+
+.lastCell {
+  border: 0.15em solid red;
+}
+
+.flash {
+  background-color: rgb(6, 90, 6);
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  align-content: center;
+}
+
+@keyframes landing {
+  from {
+    opacity: 0;
+    transform: scaleX(4) scaleY(4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+}
