@@ -1,6 +1,8 @@
 # bingo
 
-A simple bingo board
+A very simple bingo board.
+
+https://ja.cat/wabingo
 
 Just open `index.html`, make it full screen with `F11` and press the spacebar to make the numbers appear randomly.
 
